@@ -20,7 +20,7 @@ st.markdown(
         padding: 20px;
     }
 
-    /* 🔹 Estilos de títulos y leyendas (NO SE TOCAN, ya están bien) */
+    /* 🔹 Títulos y leyendas (NO SE TOCAN, ya están bien) */
     .title, p, label, .stTextInput label {
         color: #3A2D1E !important;
     }
@@ -42,18 +42,19 @@ st.markdown(
         padding: 8px;
     }
 
-    /* 🔹 🔥 FIX FINAL: Forzar texto blanco en TODOS los botones */
-    .stButton>button, div[data-testid="stButton"] > button {
+    /* 🔥 FIX FINAL: Forzar texto blanco en TODOS los botones */
+    .stButton > button, div[data-testid="stButton"] > button {
         font-size: 18px;
         background-color: #3A2D1E !important;
         color: white !important;  /* ✅ TEXTO BLANCO FIJO */
         padding: 10px;
         border-radius: 10px;
         border: none;
-        text-shadow: none !important;  /* 🔥 Evita que el sistema cambie el color */
+        text-shadow: none !important;  /* 🔥 Evita cualquier sombra que altere el color */
+        filter: brightness(1.2) !important; /* 🔥 Asegura visibilidad */
     }
 
-    .stButton>button:hover {
+    .stButton > button:hover, div[data-testid="stButton"] > button:hover {
         background-color: #AF813F !important;
     }
 
@@ -63,17 +64,18 @@ st.markdown(
             color: #3A2D1E !important;
         }
         
-        .stButton>button, div[data-testid="stButton"] > button {
+        .stButton > button, div[data-testid="stButton"] > button {
             font-size: 16px;
             padding: 8px;
             color: white !important;  /* ✅ TEXTO BLANCO FIJO en mobile */
+            filter: brightness(1.2) !important; /* 🔥 Asegura visibilidad en mobile */
         }
 
-        .stButton>button:hover {
+        .stButton > button:hover, div[data-testid="stButton"] > button:hover {
             background-color: #AF813F !important;
         }
     }
-    
+
     </style>
     """,
     unsafe_allow_html=True
