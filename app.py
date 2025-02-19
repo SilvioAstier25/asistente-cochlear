@@ -40,7 +40,7 @@ st.markdown(
     .stButton>button {
         font-size: 18px;
         background-color: #3A2D1E;
-        color: white;  /* ✅ Forzar texto blanco */
+        color: white !important;  /* ✅ Forzar texto blanco */
         padding: 10px;
         border-radius: 10px;
         border: none;
@@ -48,24 +48,22 @@ st.markdown(
     .stButton>button:hover {
         background-color: #AF813F;
     }
-    /* ✅ Corrección de colores en mobile */
+    
+    /* ✅ Corrección específica de botones en mobile */
     @media screen and (max-width: 768px) {
-        .stApp, .response-box, .title, p, label, .stTextInput label {
-            color: #3A2D1E !important;  /* ✅ Asegurar que los textos sean oscuros */
-        }
         .stButton>button {
+            color: white !important; /* ✅ Asegurar texto blanco en mobile */
             font-size: 16px;
             padding: 8px;
-            background-color: #3A2D1E !important;
-            color: white !important; /* ✅ Asegurar texto blanco en botones */
         }
         .stButton>button:hover {
             background-color: #AF813F !important;
         }
-        /* ✅ Ajuste específico para el botón de preguntas predefinidas */
-        div[data-testid="stButton"] > button {
-            color: white !important; /* ✅ Asegura texto blanco en todos los botones */
-        }
+    }
+    
+    /* ✅ Corrección específica del botón "Usar preguntas predefinidas" */
+    div[data-testid="stButton"] > button {
+        color: white !important;  /* ✅ Asegura texto blanco en todas las vistas */
     }
     </style>
     """,
