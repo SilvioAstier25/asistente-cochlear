@@ -20,7 +20,7 @@ st.markdown(
     }
     .title {
         text-align: center;
-        color: #3A2D1E;
+        color: #3A2D1E !important;  /* ✅ Forzar título oscuro en todas las vistas */
         font-size: 28px;
         font-weight: bold;
     }
@@ -40,7 +40,7 @@ st.markdown(
     .stButton>button {
         font-size: 18px;
         background-color: #3A2D1E;
-        color: white !important;  /* ✅ Forzar texto blanco */
+        color: white !important;  /* ✅ Mantener texto blanco en botones */
         padding: 10px;
         border-radius: 10px;
         border: none;
@@ -49,21 +49,19 @@ st.markdown(
         background-color: #AF813F;
     }
     
-    /* ✅ Corrección específica de botones en mobile */
+    /* ✅ Corrección definitiva para mobile */
     @media screen and (max-width: 768px) {
-        .stButton>button {
-            color: white !important; /* ✅ Asegurar texto blanco en mobile */
-            font-size: 16px;
-            padding: 8px;
+        .stApp, .response-box, .title, p, label, .stTextInput label {
+            color: #3A2D1E !important;  /* ✅ Mantener textos oscuros */
         }
-        .stButton>button:hover {
-            background-color: #AF813F !important;
+        .stButton>button {
+            color: white !important; /* ✅ Asegurar texto blanco en botones */
         }
     }
     
     /* ✅ Corrección específica del botón "Usar preguntas predefinidas" */
     div[data-testid="stButton"] > button {
-        color: white !important;  /* ✅ Asegura texto blanco en todas las vistas */
+        color: white !important;  /* ✅ Asegura texto blanco en botones */
     }
     </style>
     """,
