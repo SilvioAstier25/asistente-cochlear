@@ -26,20 +26,19 @@ st.markdown(
     }
     .response-box {
         background-color: #FCE8C6;
-        padding: 10px;
+        padding: 15px;
         border-radius: 10px;
         font-size: 16px;
         color: #3A2D1E;
-        margin-top: 10px;
     }
-    .stTextInput>div>div>input, .stSelectbox>div>div>select {
-        font-size: 16px;
+    .stTextInput>div>div>input {
+        font-size: 18px;
         border: 2px solid #AF813F;
         border-radius: 10px;
         padding: 8px;
     }
     .stButton>button {
-        font-size: 16px;
+        font-size: 18px;
         background-color: #3A2D1E;
         color: white;
         padding: 10px;
@@ -48,6 +47,16 @@ st.markdown(
     }
     .stButton>button:hover {
         background-color: #AF813F;
+    }
+    /* ✅ Corrección de colores en mobile */
+    @media screen and (max-width: 768px) {
+        .response-box, .title, p, label, .stTextInput label {
+            color: #3A2D1E !important;
+        }
+        .stButton>button {
+            font-size: 16px;
+            padding: 8px;
+        }
     }
     </style>
     """,
