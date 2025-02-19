@@ -14,18 +14,18 @@ contexto = "Eres un asistente especializado en implantes cocleares de Cochlear. 
 st.markdown(
     """
     <style>
-    /* 🔹 Fijar fondo general */
+    /* 🔹 Fondo general */
     .stApp {
         background-color: #F7D275;
         padding: 20px;
     }
 
-    /* 🔹 Fijar color oscuro en títulos y leyendas */
+    /* 🔹 Estilos de títulos y leyendas (NO SE TOCAN, ya están bien) */
     .title, p, label, .stTextInput label {
         color: #3A2D1E !important;
     }
 
-    /* 🔹 Fijar color del cuadro de respuesta */
+    /* 🔹 Cuadro de respuesta */
     .response-box {
         background-color: #FCE8C6;
         padding: 15px;
@@ -42,48 +42,36 @@ st.markdown(
         padding: 8px;
     }
 
-    /* 🔹 Estilo base de los botones */
-    .stButton>button {
+    /* 🔹 🔥 FIX FINAL: Forzar texto blanco en TODOS los botones */
+    .stButton>button, div[data-testid="stButton"] > button {
         font-size: 18px;
-        background-color: #3A2D1E;
-        color: white !important;  /* ✅ Fijar texto blanco en botones */
+        background-color: #3A2D1E !important;
+        color: white !important;  /* ✅ TEXTO BLANCO FIJO */
         padding: 10px;
         border-radius: 10px;
         border: none;
-    }
-    
-    .stButton>button:hover {
-        background-color: #AF813F;
+        text-shadow: none !important;  /* 🔥 Evita que el sistema cambie el color */
     }
 
-    /* 🔹 Corrección para vista vertical en móviles */
+    .stButton>button:hover {
+        background-color: #AF813F !important;
+    }
+
+    /* 🔹 Corrección específica para mobile */
     @media screen and (max-width: 768px) {
         .stApp, .response-box, .title, p, label, .stTextInput label {
             color: #3A2D1E !important;
         }
         
-        /* ✅ Fijar texto blanco en botones en vista vertical */
-        .stButton>button {
-            color: white !important;
+        .stButton>button, div[data-testid="stButton"] > button {
             font-size: 16px;
             padding: 8px;
+            color: white !important;  /* ✅ TEXTO BLANCO FIJO en mobile */
         }
 
         .stButton>button:hover {
             background-color: #AF813F !important;
         }
-    }
-
-    /* 🔹 Corrección para vista horizontal */
-    @media screen and (min-width: 769px) {
-        .title, p, label, .stTextInput label {
-            color: #3A2D1E !important;  /* ✅ Asegurar legibilidad en horizontal */
-        }
-    }
-
-    /* 🔹 Fijar color blanco en botón "Usar preguntas predefinidas" */
-    div[data-testid="stButton"] > button {
-        color: white !important;
     }
     
     </style>
