@@ -40,7 +40,7 @@ st.markdown(
     .stButton>button {
         font-size: 18px;
         background-color: #3A2D1E;
-        color: white;
+        color: white;  /* ✅ Asegura que los botones tengan texto blanco */
         padding: 10px;
         border-radius: 10px;
         border: none;
@@ -56,6 +56,11 @@ st.markdown(
         .stButton>button {
             font-size: 16px;
             padding: 8px;
+            background-color: #3A2D1E !important;
+            color: white !important; /* ✅ Forzar texto blanco en botones en mobile */
+        }
+        .stButton>button:hover {
+            background-color: #AF813F !important;
         }
     }
     </style>
