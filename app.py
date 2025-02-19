@@ -20,7 +20,7 @@ st.markdown(
         padding: 20px;
     }
 
-    /* 🔹 Títulos y leyendas (NO SE TOCAN, ya están bien) */
+    /* 🔹 Títulos y leyendas */
     .title, p, label, .stTextInput label {
         color: #3A2D1E !important;
     }
@@ -42,23 +42,22 @@ st.markdown(
         padding: 8px;
     }
 
-    /* 🔥 FIX FINAL: Forzar texto blanco en TODOS los botones */
+    /* 🔹 🔥 SOLUCIÓN FINAL: Cambiar color de botones a un tono más claro */
     .stButton > button, div[data-testid="stButton"] > button {
         font-size: 18px;
-        background-color: #3A2D1E !important;
-        color: white !important;  /* ✅ TEXTO BLANCO FIJO */
-        padding: 10px;
+        background-color: #AF813F !important; /* ✅ Nuevo color más claro para mejorar visibilidad */
+        color: black !important;  /* ✅ Ahora el texto será negro y siempre visible */
+        padding: 12px;
         border-radius: 10px;
         border: none;
-        text-shadow: none !important;  /* 🔥 Evita cualquier sombra que altere el color */
-        filter: brightness(1.2) !important; /* 🔥 Asegura visibilidad */
+        text-shadow: none !important;
     }
 
     .stButton > button:hover, div[data-testid="stButton"] > button:hover {
-        background-color: #AF813F !important;
+        background-color: #D9A55D !important; /* ✅ Un tono más claro en hover */
     }
 
-    /* 🔹 Corrección específica para mobile */
+    /* 🔹 Corrección para Mobile */
     @media screen and (max-width: 768px) {
         .stApp, .response-box, .title, p, label, .stTextInput label {
             color: #3A2D1E !important;
@@ -66,16 +65,11 @@ st.markdown(
         
         .stButton > button, div[data-testid="stButton"] > button {
             font-size: 16px;
-            padding: 8px;
-            color: white !important;  /* ✅ TEXTO BLANCO FIJO en mobile */
-            filter: brightness(1.2) !important; /* 🔥 Asegura visibilidad en mobile */
-        }
-
-        .stButton > button:hover, div[data-testid="stButton"] > button:hover {
-            background-color: #AF813F !important;
+            padding: 10px;
+            color: black !important;  /* ✅ Texto negro para que siempre se vea */
         }
     }
-
+    
     </style>
     """,
     unsafe_allow_html=True
